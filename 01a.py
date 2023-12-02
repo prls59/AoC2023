@@ -8,14 +8,10 @@ def getnumbers(string):
             out += c
     return out
 
-try:
-    input = open(datafile)
+with open(datafile) as input:
     sum = 0
     for line in input:
         numerals = getnumbers(line)
         sum += 10*int(numerals[:1]) + int(numerals[-1:])
 
     print('Sum = ', sum)
-
-finally:
-    input.close()

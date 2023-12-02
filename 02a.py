@@ -1,8 +1,7 @@
 datafile = "../../AoC/2023/02.txt"
 limits = {'red': 12, 'green': 13, 'blue': 14}
 
-try:
-    input = open(datafile)
+with open(datafile) as input:
     idsum = 0
     for line in input:
         line = line[0:-1] # strip off \n
@@ -20,6 +19,3 @@ try:
                 break
         idsum += id
     print('Result = ', idsum)
-
-finally:
-    input.close()

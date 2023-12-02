@@ -2,8 +2,7 @@ from functools import reduce
 datafile = "../../AoC/2023/02.txt"
 index = {'red': 0, 'green': 1, 'blue': 2}
 
-try:
-    input = open(datafile)
+with open(datafile) as input:
     powersum = 0
     for line in input:
         line = line[0:-1] # strip off \n
@@ -19,6 +18,3 @@ try:
                     minima[index[cubes[1]]] = int(cubes[0])
         powersum += reduce((lambda x, y: x * y), minima)
     print('Result = ', powersum)
-
-finally:
-    input.close()
