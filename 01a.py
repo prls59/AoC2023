@@ -1,3 +1,4 @@
+datafile = "../../AoC/2023/01.txt"
 numerals = ""
 
 def getnumbers(string):
@@ -8,7 +9,7 @@ def getnumbers(string):
     return out
 
 try:
-    input = open("01.txt")
+    input = open(datafile)
     sum = 0
     for line in input:
         numerals = getnumbers(line)
