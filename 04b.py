@@ -1,5 +1,5 @@
 import re
-datafile = "../../AoC/2023/04testa.txt"
+datafile = "../../AoC/2023/04.txt"
 MATCHES = 0
 COPIES = 1
 cards = []
