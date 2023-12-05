@@ -22,14 +22,12 @@ with open(datafile) as input:
                 matching_nums += 1
         cards.append([matching_nums, 1])
 
-# create the copies    
+# create & count the copies    
+tot_cards = 0
 for n in range(len(cards)):
+    tot_cards += cards[n][COPIES]
     if cards[n][MATCHES] > 0:
         for m in range(1,cards[n][MATCHES]+1):
             cards[n+m][COPIES] += cards[n][COPIES]
-
-tot_cards = 0
-for card in cards:
-    tot_cards += card[COPIES]
 
 print('Result = ', tot_cards)
