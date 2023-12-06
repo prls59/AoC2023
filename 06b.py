@@ -12,9 +12,7 @@ def quadratic_roots(a, b, c):
     roots = []
     disc = b*b - 4*a*c
     sqrt_disc = math.sqrt(abs(disc))
-    if disc == 0:
-        roots = [-b / (2*a), -b / (2*a)]
-    elif disc > 0:
+    if disc >= 0:
         roots = [(-b - sqrt_disc) / (2*a), (-b + sqrt_disc) / (2*a)]
     else:
         roots = [0,0] # complex roots
