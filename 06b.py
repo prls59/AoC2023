@@ -9,13 +9,8 @@ def getnumbers(string):
     return [int(out)]
 
 def quadratic_roots(a, b, c):
-    roots = []
-    disc = b*b - 4*a*c
-    sqrt_disc = math.sqrt(abs(disc))
-    if disc >= 0:
-        roots = [(-b - sqrt_disc) / (2*a), (-b + sqrt_disc) / (2*a)]
-    else:
-        roots = [0,0] # complex roots
+    disc = math.sqrt(abs(b*b - 4*a*c))
+    roots = [(-b - disc) / (2*a), (-b + disc) / (2*a)]
     return roots
 
 with open(datafile) as input:
@@ -27,11 +22,7 @@ with open(datafile) as input:
 
 product = 1
 for n in range(len(times)):
-    roots = quadratic_roots(1, -times[n], dists[n])
-    if math.ceil(roots[0]) == roots[0]:
-        roots[0] += 1
-    if math.floor(roots[1]) == roots[1]:
-        roots[1] -= 1
+    roots = quadratic_roots(1, -times[n], dists[n] + 1)
     product *= math.floor(roots[1]) - math.ceil(roots[0]) + 1
 
 print('Result = ', product)
