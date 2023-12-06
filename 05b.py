@@ -67,18 +67,11 @@ with open(datafile) as input:
                 h2l = readmap(almanac)
 
 closest = -1
-totseeds = sum(seeds[i] for i in range(1, len(seeds), 2))
-seeds_so_far = 0
-start_time = time.time()
 for n in range(0, len(seeds), 2):
     seedcount = seeds[n+1]
     for m in range(seedcount):
         loc = lookup(h2l,lookup(t2h,lookup(l2t,lookup(w2l,lookup(f2w,lookup(s2f,lookup(s2s,seeds[n]+m)))))))
         if closest == -1 or loc < closest:
             closest = loc
-    seeds_so_far += seedcount
-    timetaken = time.time() - start_time
-    print('   Seed ', seeds[n], ' complete in ', timetaken, ' seconds.')
-    print('   (estimate ', (totseeds * timetaken / seeds_so_far) - timetaken, ' seconds remaining.)\n')
 
 print('Result = ', closest)
