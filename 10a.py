@@ -1,4 +1,4 @@
-datafile = "../../AoC/2023/10testa.txt"
+datafile = "../../AoC/2023/10.txt"
 
 NORTH = 0b0001
 SOUTH = 0b0010

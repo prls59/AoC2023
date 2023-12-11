@@ -38,7 +38,7 @@ def duration(interval):
 
 timestamp('start')
 
-datafile = "../../AoC/2023/10testb.txt"
+datafile = "../../AoC/2023/10.txt"
 
 NORTH = 0b0001
 SOUTH = 0b0010
