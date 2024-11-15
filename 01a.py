@@ -14,4 +14,4 @@ with open(datafile) as input:
         numerals = getnumbers(line)
         sum += 10*int(numerals[:1]) + int(numerals[-1:])
 
-    print('Sum = ', sum)
+    print('Sum: ', sum)
