@@ -1,4 +1,4 @@
-datafile = "../../AoC/2023/01.txt"
+datafile = "01.txt"
 numerals = ""
 numwords = ["one","two","three","four","five","six","seven","eight","nine"]
 
